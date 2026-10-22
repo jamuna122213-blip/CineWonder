@@ -11,7 +11,7 @@
 
  export default function Home(){
     const [search,setSearch]=useState("")
-    const [genre,setGenre]=useState("")
+    const [genre,setGenre]=useState("All")
 
     const genres = ["All",...new Set(movies.map((movie) => movie.genre))]
 
@@ -19,7 +19,8 @@
     const filtered = movies.filter(
         (movie) => 
             movie.title.toLowerCase().includes(search.toLowerCase()) &&
-             (genre === "All" || movie.genre === genre)
+            
+        (genre === "All" || movie.genre === genre)
     )
 
 
@@ -30,7 +31,7 @@
             Your Movie Universe
         </p>
 
-        <h1 ClassName="text-3xlfont-bold tracking-wide">
+        <h1 className="text-3xl font-bold tracking-wide">
             Find Your Next Favourite Movie..
         </h1>
 
@@ -41,7 +42,7 @@
 
             <input type="text" placeholder="Enter Your Favourite Movie"
         value={search} onChange={(e) => setSearch(e.target.value)}
-        className="w-100 rounded-xl bg-movie-surface p-4 [box_shadow:0_0_3px_white]"
+        className="w-100% rounded-xl bg-movie-surface p-4 [box_shadow:0_0_3px_white]"
         />
 
         <div className="flex w-full gap-10  ml-0">
@@ -55,6 +56,28 @@
                 }`}>
                     {g}
                 </button>
+            ))}
+        </div>
+
+        <h1 className="text-2xl font-bold">
+            Explore Movies
+        </h1>
+
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {filtered.map((movie) => (
+                <article
+                key={movie.id}
+                className="p-3 rounded-2xl border border-white/10 bg-movie-surface transition hover:-translate-y-1"
+                >
+                <div className="mb-4 flex h-36 items-center justify-center rounded-xl bg-blue-300">
+                    Null
+                </div>
+
+                <h3>{movie.title}</h3>
+
+                <p className="mt-1 text-sm text-gray-400">{movie.genre}</p>
+
+                </article>
             ))}
         </div>
 
