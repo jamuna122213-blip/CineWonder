@@ -2,7 +2,8 @@ import { Link } from "react-router-dom"
 
 export default function Login(){
     return (
-        <div classname="flex min-h-screen items-center justify-center bg-movie-bg p-6 text-white">
+        
+        <div className="flex min-h-screen items-center justify-center bg-movie-bg p-6 text-white">
         <div className="w-full max-w-sm rounded-2xl bg-movie-surface p-8 shadow-lg">
 
             <h1 className="mb-2 text-3xl font-bold">
@@ -16,15 +17,35 @@ export default function Login(){
                 className="space-y-4">
             
             <div>
-                <label htmlfor="email"
+                <label htmlFor="email"
                 className="mb-2 block font-bold">
                     Email
                 </label>
-                <input id="email" type="email" name="email" required place />
+                <input id="email" type="email" name="email" required 
+                placeholder="ENter Email Id" 
+                autoComplete="email"
+                className="w-full rounded-md border border-gray-600 bg-movie-bg p-3 outline-none focus:border-movie-accent"
+                />
             </div>
+            <div>
+                <label className="mb-2 block font-bold" htmlFor="password">
+                  Password
+                </label>
+                <input id="password" type="password" name="password" required placeholder="Enter Password"
+                className="w-full rounded-md border border-gray-600 bg-movie-bg p-3 outline-none focus:border-movie-accent" />
+            </div>
+
+            <button className="w-full rounded-md bg-movie-accent p-3 font-bold text-white transition hover:opacity-90">Login</button>
+
+            <p className="mt-6 text-center text-gray-400">
+                New Here?
+                <Link to="/register" className="font-semibold text-movie-accent hover:underline">
+                Create Account</Link>
+            </p>
 
             </form>
         </div>
         </div>
+
     )
 }
