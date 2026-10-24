@@ -3,26 +3,7 @@ require("dotenv").config()
 const mongoose = require("mongoose");
 const Movie = require("./models/Movie")
 
-const movies=[
-    {
-        title:"sample video 1",
-        genre:"Action",
-        poster:"",
-        videoId:"wewewe"
-    },
-     {
-        title:"sample video 1",
-        genre:"Action",
-        poster:"",
-        videoId:"wewewe"
-    },
-     {
-        title:"sample video 1",
-        genre:"Action",
-        poster:"",
-        videoId:"wewewe"
-    },
-]
+
 
 async function seedMovies(){
     try {

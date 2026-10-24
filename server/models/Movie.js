@@ -15,6 +15,10 @@ const movieSchema = new mongoose.Schema({
     },
     videoId:{
         type:String,
+        default:""
+    },
+    videoUrl:{
+        type:String,
         required:true
     }
 })
