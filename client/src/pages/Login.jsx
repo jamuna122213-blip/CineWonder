@@ -1,11 +1,13 @@
 import { Link,useNavigate } from "react-router-dom"
 import {useState} from "react"
 import axios from "axios"
+import {useAuth} from "../context/AuthContext"
 
 
 export default function Login(){
 
-    
+    const {login} = useAuth()
+
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [message,setMessage] = useState("")
@@ -20,7 +22,7 @@ export default function Login(){
             const response = await axios.post("/api/auth/login",{
                 email,password
             })
-            setMessage(response.data.message)
+            login(response.data.user)
             navigate("/")
         }
         catch(error) {
@@ -28,6 +30,7 @@ export default function Login(){
             console.log("Login error:",error);
             console.log("server response:",erro.response?.data)
             console.log("Status",error.response?.status)
+
             
             setMessage(
                 error.response?.data?.message || "Login Failed"
