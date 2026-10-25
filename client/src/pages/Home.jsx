@@ -1,14 +1,7 @@
  import { useEffect,useState } from "react"
-import axios from "axios"
+import api from "../api/axios"
 import MoviePlayer from "../components/MoviePlayer"
 
-//  const movies=[
-//     {id:1,title:"Black Panter",genre:"Action"},
-//     {id:2,title:"Spider man",genre:"Adventure"},
-//     {id:3,title:"Inside Out",genre:"Comedy"},
-//     {id:4,title:"The Conjuring",genre:"Horror"},
-//     {id:5,title:"Titanic",genre:"Romance"}
-//  ]
 
 
  export default function Home(){
@@ -29,7 +22,7 @@ import MoviePlayer from "../components/MoviePlayer"
     })
     
     useEffect(() => {
-        axios.get("/api/movies")
+        api.get("/api/movies")
         .then((response) => {
             setMovies(response.data)
         })
