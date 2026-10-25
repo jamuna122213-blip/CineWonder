@@ -2,78 +2,72 @@
 
 ### Discover Movies. Find Your Next Favorite.
 
-CineWonder is a movie discovery web application that allows users to explore movies, search for their favorites, and organize movies they want to watch. Built with React and Tailwind CSS, CineWonder combines a modern dark-themed interface with a full-stack backend powered by Node.js, Express, and MongoDB.
+CineWonder is a full-stack movie discovery web application built to make exploring movies simple and enjoyable. Users can browse movies, search for favorites, filter by category, and organize movies they want to watch.
 
-The project focuses on providing a simple, responsive, and enjoyable movie-browsing experience.
+Built with React, Tailwind CSS, Node.js, Express, and MongoDB, CineWonder combines a modern dark-themed interface with a full-stack architecture.
+
+🌐 **Live Website:** [CineWonder](https://cine-wonder.vercel.app/)
+
+📦 **GitHub Repository:** [CineWonder on GitHub](https://github.com/jamuna122213-blip/CineWonder)
 
 ---
 
 ## 📸 Screenshots
 
-<!-- Add your project screenshots in the docs/screenshots/ directory. -->
 
 ### 🏠 Home Page
-
-<!-- Replace the placeholder below with your home page screenshot. -->
-
-![CineWonder Home Page](docs/screenshots/home.png)
+![CineWonder Home Page](../images/home.png)
 
 ### 🔐 Login Page
 
-![CineWonder Login Page](docs/screenshots/login.png)
+![CineWonder Login Page](../images/login.png)
 
 ### 📝 Register Page
 
-![CineWonder Register Page](docs/screenshots/register.png)
+![CineWonder Register Page](../images/register.png)
 
-### 🎥 Movie Details
-
-![CineWonder Movie Details](docs/screenshots/movie-details.png)
+### 🎥 Movie Listening
+![CineWonder Movie Listing](../images/movies.png)
 
 ### ❤️ Watchlist
 
-![CineWonder Watchlist](docs/screenshots/watchlist.png)
+![CineWonder Watchlist](../images/wishlist.png)
 
-> **Note:** Replace these screenshot paths with your actual screenshots. Remove any sections for pages that are not implemented yet.
 
 ---
 
 ## ✨ Features
 
-- 🎬 **Movie Discovery** — Browse and explore movies.
-- 🔍 **Movie Search** — Find movies using the search functionality.
+- 🎬 **Movie Discovery** — Browse and explore available movies.
+- 🔍 **Movie Search** — Find movies using search functionality.
 - 🗂️ **Category Filtering** — Explore movies by category.
-- 🔐 **User Authentication** — Register and log in to your account.
-- ❤️ **Personal Watchlist** — Keep track of movies you want to watch.
-- 👤 **User Profile** — Access your personal profile.
-- 📱 **Responsive Interface** — Designed for a comfortable browsing experience across different screen sizes.
-- 🎨 **Modern UI** — Dark-themed design with purple accents, smooth styling, and the Fredoka font.
+- 🔐 **User Authentication** — Register and log in.
+- ❤️ **Personal Watchlist** — Organize movies you want to watch.
+- 👤 **User Profile** — Access the profile interface.
+- 📱 **Responsive UI** — Designed for a comfortable browsing experience across screen sizes.
+- 🎨 **Modern Design** — Dark theme, purple accents, and the Fredoka font.
 
-*Features may vary depending on the current implementation.*
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-
 - **React** — Component-based user interface.
-- **Vite** — Fast development server and build tool.
+- **Vite** — Development server and build tool.
 - **Tailwind CSS v4** — Utility-first styling.
 - **React Router DOM** — Client-side navigation.
-- **Axios** — HTTP requests to the backend.
+- **Axios** — HTTP requests.
 
 ### Backend
-
 - **Node.js** — JavaScript runtime.
 - **Express.js** — Backend API and routing.
 - **MongoDB** — NoSQL database.
 - **Mongoose** — MongoDB object modeling.
 
-### Tools & Deployment
-
+### Tools and Deployment
 - **Git & GitHub** — Version control and source code hosting.
-- **Vercel** — Deployment platform.
+- **Vercel** — Frontend and backend deployment.
 - **MongoDB Atlas** — Cloud database hosting.
 
 ---
@@ -81,19 +75,13 @@ The project focuses on providing a simple, responsive, and enjoyable movie-brows
 ## 📁 Project Structure
 
 ```text
-Cine_Wonder/
-│
+CineWonder/
 ├── client/
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
-│   │   │   └── hero.png
 │   │   ├── components/
-│   │   │   ├── AuthLayout.jsx
-│   │   │   ├── MoviePlayer.jsx
-│   │   │   └── Navbar.jsx
 │   │   ├── context/
-│   │   │   └── AuthContext.jsx
 │   │   ├── pages/
 │   │   ├── App.jsx
 │   │   ├── App.css
@@ -101,18 +89,13 @@ Cine_Wonder/
 │   │   └── main.jsx
 │   ├── index.html
 │   ├── package.json
+│   ├── vercel.json
 │   └── vite.config.js
 │
 ├── server/
 │   ├── config/
-│   │   └── db.js
 │   ├── models/
-│   │   ├── Movie.js
-│   │   └── User.js
 │   ├── routes/
-│   │   ├── authRoutes.js
-│   │   └── movieRoutes.js
-│   ├── .env
 │   ├── .gitignore
 │   ├── movies.json
 │   ├── seedMovies.js
@@ -129,40 +112,26 @@ Cine_Wonder/
 
 ## 🚀 Getting Started
 
-Follow these steps to run CineWonder locally.
+### Prerequisites
 
-### 1. Prerequisites
-
-Make sure you have the following installed:
+Install the following tools:
 
 - [Node.js](https://nodejs.org/)
-- npm (included with Node.js)
+- npm
 - [Git](https://git-scm.com/)
-- A MongoDB database, either local MongoDB or MongoDB Atlas.
+- MongoDB locally or a MongoDB Atlas account.
 
-### 2. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/jamuna122213-blip/CineWonder.git
-```
-
-Navigate to the project directory:
-
-```bash
 cd CineWonder
 ```
 
-### 3. Set Up the Backend
-
-Navigate to the server directory:
+### 2. Set Up the Backend
 
 ```bash
 cd server
-```
-
-Install the dependencies:
-
-```bash
 npm install
 ```
 
@@ -173,128 +142,112 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 ```
 
-Replace `your_mongodb_connection_string` with your MongoDB connection string.
+Replace the placeholder with your own MongoDB connection string.
 
-**Important:** Never commit your `.env` file or expose your database credentials publicly.
-
-Start the backend server:
+Start the backend:
 
 ```bash
 node server.js
 ```
 
-The backend should run on:
+The local backend is expected to run at `http://localhost:5000`.
 
-`http://localhost:5000`
+### 3. Set Up the Frontend
 
-### 4. Set Up the Frontend
-
-Open a new terminal at the project root and navigate to the client directory:
+Open a second terminal at the project root:
 
 ```bash
 cd client
-```
-
-Install the dependencies:
-
-```bash
 npm install
-```
-
-Start the Vite development server:
-
-```bash
 npm run dev
 ```
 
-Open the local URL displayed in your terminal, usually:
+Open the local URL displayed by Vite, usually `http://localhost:5173`.
 
-`http://localhost:5173`
+### 4. Verify the Application
 
-### 5. Verify the Application
+- Confirm the frontend loads.
+- Confirm the backend starts successfully.
+- Confirm the MongoDB connection works.
+- Test the implemented pages and API features.
 
-- Confirm that the frontend opens successfully.
-- Confirm that the backend server starts without errors.
-- Verify that MongoDB connects successfully.
-- Test the frontend features that are currently implemented.
+> **Security:** Never commit your `.env` file or expose database credentials in your repository.
 
 ---
 
 ## 🌐 Deployment
 
-CineWonder is being deployed using Vercel.
+### Frontend
 
-### Frontend Deployment
+The CineWonder frontend is deployed on Vercel.
 
-1. Push the project to GitHub.
-2. Import the repository into Vercel.
-3. Configure the frontend project with `client` as the root directory if deploying the client separately.
-4. Configure the required production environment variables.
-5. Deploy the application and test the generated URL.
+🔗 **Live Website:** [https://cine-wonder.vercel.app/](https://cine-wonder.vercel.app/)
 
-### Backend Deployment
+### Backend
 
-The Express backend requires a server runtime. If deploying it separately, configure the backend service and its environment variables.
+The Express backend is deployed separately.
 
-### MongoDB Atlas
+🔗 **Backend URL:** [https://cine-wonder-wsry.vercel.app/](https://cine-wonder-wsry.vercel.app/)
 
-For a cloud database:
+### Database
 
-1. Create a MongoDB Atlas cluster.
-2. Create a database user.
-3. Configure network access appropriately.
-4. Add the MongoDB connection string to the backend deployment's environment variables.
-5. Verify that the deployed backend can connect to the database.
+MongoDB Atlas is used to host the cloud database. The backend connects to Atlas through the `MONGO_URI` environment variable.
 
-**Deployment note:** Deploying the frontend does not automatically make a separately running Express server available online. Configure the frontend to send API requests to the deployed backend URL, and ensure that CORS settings allow the deployed frontend origin.
+Production deployments require the correct environment variables, database credentials, API configuration, and CORS settings.
 
 ---
 
-## 🔑 Environment Variables
+## 💡 My Deployment Journey
 
-Keep all credentials and private configuration values in environment variables.
+One of the most valuable parts of building CineWonder was deploying it for the first time.
 
-### Backend — `server/.env`
+I was new to deploying full-stack applications using **Vercel and MongoDB Atlas**. Although the application worked locally, getting everything running in production introduced a completely different set of challenges.
 
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-```
+I spent around **3–4 hours troubleshooting deployment errors**, checking logs, correcting configuration, and understanding how the frontend, backend, and cloud database communicate with each other.
 
-Add any other variables required by your authentication or backend code.
+Some of the challenges I worked through included:
 
-For production, configure environment variables in the hosting platform instead of relying on a local `.env` file.
+- Deploying the frontend and backend separately.
+- Configuring environment variables for production.
+- Connecting the Express backend to MongoDB Atlas.
+- Troubleshooting MongoDB authentication failures.
+- Understanding Vercel runtime errors through deployment logs.
+- Fixing React Router refresh issues using Vercel rewrites.
+- Learning the importance of configuring production API URLs and CORS.
 
-Never publish database passwords, authentication secrets, or other private credentials in this repository.
+The process taught me that building an application is only one part of full-stack development. Deploying it, debugging production issues, and connecting different services are equally important skills.
+
+**The biggest lesson:** Errors are part of development. Reading logs, understanding the root cause, and fixing problems step by step helped me learn much more than simply getting the application to run.
 
 ---
 
 ## 🧠 What I Learned
 
-Through CineWonder, I am exploring and practicing:
+Through CineWonder, I am learning and practicing:
 
-- Building reusable UI components with React.
-- Managing frontend navigation with React Router.
-- Styling applications with Tailwind CSS v4.
-- Organizing a project into frontend and backend modules.
-- Creating REST API endpoints using Express.js.
+- Building reusable components with React.
+- Managing navigation with React Router.
+- Styling applications using Tailwind CSS v4.
+- Creating REST APIs with Express.js.
 - Connecting MongoDB with Mongoose.
-- Implementing user authentication and application state management.
+- Managing frontend state and authentication flows.
 - Using Git and GitHub for version control.
-- Deploying a full-stack application and configuring production environments.
+- Deploying applications using Vercel.
+- Connecting a backend to a cloud database with MongoDB Atlas.
+- Debugging deployment and configuration errors.
 
 ---
 
 ## 🔮 Future Improvements
 
 - Expand the movie collection and category options.
-- Improve movie filtering and search.
+- Improve search and filtering.
 - Enhance movie detail pages.
 - Improve watchlist management.
 - Add smoother animations and loading states.
 - Strengthen authentication and error handling.
 - Improve accessibility and mobile responsiveness.
-- Add more testing and performance optimizations.
+- Add automated tests and performance optimizations.
 
 ---
 
@@ -312,22 +265,22 @@ Suggestions and improvements are welcome.
 
 ## 👨‍💻 Author
 
-**Sri Sabari**
 
-GitHub: [@jamuna122213-blip](https://github.com/jamuna122213-blip)
 
-Project Repository: [CineWonder](https://github.com/jamuna122213-blip/CineWonder)
+- GitHub: [@jamuna122213-blip](https://github.com/jamuna122213-blip)
+- Project: [CineWonder Repository](https://github.com/jamuna122213-blip/CineWonder)
+- Live Website: [CineWonder](https://cine-wonder.vercel.app/)
 
 ---
 
 ## 📄 License
 
-This project is currently a personal learning project. A formal open-source license can be added when the project is ready for public distribution.
+This is currently a personal learning project. A formal open-source license can be added when the project is ready for public distribution.
 
 ---
 
 <p align="center">
-  Made with ❤️ and code.
+  Made with ❤️, persistence, and code.
   <br />
   <strong>CineWonder — Your next favorite movie awaits!</strong>
 </p>
