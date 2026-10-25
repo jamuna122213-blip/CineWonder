@@ -1,8 +1,8 @@
 import { Link,useNavigate } from "react-router-dom"
 import {useState} from "react"
-import axios from "axios"
-import {useAuth} from "../context/AuthContext"
 
+import {useAuth} from "../context/AuthContext"
+import api from "./api/axios"
 
 export default function Login(){
 
@@ -19,16 +19,17 @@ export default function Login(){
         e.preventDefault();
 
         try{
-            const response = await axios.post("/api/auth/login",{
-                email,password
-            })
+          const response = await api.post("/api/auth/login", {
+          email,
+          password
+      })
             login(response.data.user)
             navigate("/")
         }
         catch(error) {
 
             console.log("Login error:",error);
-            console.log("server response:",erro.response?.data)
+            console.log("server response:",error.response?.data)
             console.log("Status",error.response?.status)
 
             

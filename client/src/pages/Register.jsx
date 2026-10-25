@@ -1,6 +1,6 @@
 import {Link,useNavigate} from "react-router-dom"
 import {useState} from "react"
-import axios from "axios"
+import api from "./api/axios"
 
 export default function Register(){
   
@@ -10,13 +10,13 @@ export default function Register(){
   const [message,setMessage] = useState("")
 
 const navigate = useNavigate()
-
+    
 async function handleRegister(e) {
   e.preventDefault()
 
   try{
 
-    const response =await axios.post("/api/auth/register",{
+    const response =await api.post("/api/auth/register",{
       name,email,password
     })
 
