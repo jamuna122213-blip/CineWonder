@@ -3,7 +3,7 @@ const dotenv=require("dotenv")
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
 const movieRoutes = require("./routes/movieRoutes")
-
+const authRoutes = require("./routes/authRoutes")
 
 const connectDB=require("./config/db")
 
@@ -19,6 +19,8 @@ app.use(cors({
 app.use(express.json())
 app.use(cookieParser())
 app.use("/api/movies",movieRoutes)
+app.use("/api/auth",authRoutes)
+
 app.get("/",(req,res)=>{
     res.send("Cinewonder backend is running")
 })

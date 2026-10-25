@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const links = [
     {name:"Home",path:"/"},
-    {name:"Watchlist",path:"/watchlist"},
+    {name:"Wishlist",path:"/wishlist"},
     {name:"Profile",path:"/profile"},
     {name:"Login",path:"/login"},
     {name:"Register",path:"/register"}

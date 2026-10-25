@@ -1,6 +1,41 @@
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
+import {useState} from "react"
+import axios from "axios"
+
 
 export default function Login(){
+
+    
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const [message,setMessage] = useState("")
+
+    const navigate = useNavigate()
+
+
+    async function handleLogin(e) {
+        e.preventDefault();
+
+        try{
+            const response = await axios.post("/api/auth/login",{
+                email,password
+            })
+            setMessage(response.data.message)
+            navigate("/")
+        }
+        catch(error) {
+
+            console.log("Login error:",error);
+            console.log("server response:",erro.response?.data)
+            console.log("Status",error.response?.status)
+            
+            setMessage(
+                error.response?.data?.message || "Login Failed"
+            )
+        }
+    }
+
+
     return (
         
         <div className="flex min-h-screen items-center justify-center bg-movie-bg p-6 text-white">
@@ -13,9 +48,8 @@ export default function Login(){
                 Login to explore your movie uiverse
             </p>
 
-            <form onSubmit={(e) => e.preventDefault()}
+            <form onSubmit={handleLogin}
                 className="space-y-4">
-            
             <div>
                 <label htmlFor="email"
                 className="mb-2 block font-bold">
@@ -24,6 +58,8 @@ export default function Login(){
                 <input id="email" type="email" name="email" required 
                 placeholder="ENter Email Id" 
                 autoComplete="email"
+                value={email}
+                onChange ={(e) => setEmail(e.target.value)}
                 className="w-full rounded-md border border-gray-600 bg-movie-bg p-3 outline-none focus:border-movie-accent"
                 />
             </div>
@@ -32,9 +68,16 @@ export default function Login(){
                   Password
                 </label>
                 <input id="password" type="password" name="password" required placeholder="Enter Password"
-                className="w-full rounded-md border border-gray-600 bg-movie-bg p-3 outline-none focus:border-movie-accent" />
+                 value ={password}
+                 onChange ={(e) => setPassword(e.target.value)}
+                 className="w-full rounded-md border border-gray-600 bg-movie-bg p-3 outline-none focus:border-movie-accent" />
             </div>
-
+             
+             {message && (
+                <p className="text-sm text-purple-300">
+                    {message}
+                </p>
+             )}
             <button className="w-full rounded-md bg-movie-accent p-3 font-bold text-white transition hover:opacity-90">Login</button>
 
             <p className="mt-6 text-center text-gray-400">

@@ -30,7 +30,7 @@ export default function Profile(){
             </div>
              </div>
 
-                  <Link to="/watchlist" className="rounded-2xl block mt-3 p-3 font-bold text-2xl bg-red-700 w-full" >
+                  <Link to="/wishlist" className="rounded-2xl block mt-3 p-3 font-bold text-2xl bg-red-700 w-full" >
                 View My WatchList</Link>
                 <Link to="/" className="mt-4 inline-block text-sm text-gray-400 transition hover:text-movie-accent">
                     ← Back TO Home</Link>

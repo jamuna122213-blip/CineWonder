@@ -5,15 +5,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-
+import Wishlist from "./pages/Wishlist"
         
-function Watchlist() {
-  return (
-    <main className="p-8 text-2xl">
-      Your WatchList
-    </main>
-  );
-}
 
 
 
@@ -25,7 +18,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/watchlist" element={<Watchlist />} />
+      <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
     </>
