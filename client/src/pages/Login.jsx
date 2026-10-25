@@ -2,7 +2,7 @@ import { Link,useNavigate } from "react-router-dom"
 import {useState} from "react"
 
 import {useAuth} from "../context/AuthContext"
-import api from "./api/axios"
+import api from "../api/axios"
 
 export default function Login(){
 
